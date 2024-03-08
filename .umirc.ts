@@ -8,5 +8,6 @@ export default defineConfig({
   request: {},
   npmClient: 'pnpm',
   esbuildMinifyIIFE: true,
+  publicPath: 'XM-MONACO-EDITOR-DEMO/dist/',
 });
 

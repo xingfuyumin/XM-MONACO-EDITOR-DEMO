@@ -7,5 +7,6 @@ export default defineConfig({
   initialState: {},
   request: {},
   npmClient: 'pnpm',
+  esbuildMinifyIIFE: true,
 });
 

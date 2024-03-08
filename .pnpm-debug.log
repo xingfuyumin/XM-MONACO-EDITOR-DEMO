@@ -1,0 +1,14 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ENOENT",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: create-umi@latest",
+      "code": "ENOENT",
+      "stack": "pnpm: not found: create-umi@latest\n    at getNotFoundError (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:48497:51)\n    at Function.whichSync [as sync] (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:48574:13)\n    at getCommandAbsolutePathSync (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:50139:44)\n    at default_1 (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:50148:32)\n    at Object.handler [as dlx] (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:129167:33)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:133754:20\n    at async run (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:133729:34)\n    at async runPnpm (/Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:133940:5)\n    at async /Users/zhou/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:133932:7"
+    }
+  }
+}

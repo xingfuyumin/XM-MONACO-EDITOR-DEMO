@@ -13,11 +13,12 @@
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@ant-design/pro-components": "^2.4.4",
-    "@umijs/max": "^4.1.2",
+    "@umijs/max": "4.0",
     "ahooks": "^3.7.10",
-    "antd": "^5.4.0",
+    "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "monaco-editor": "0.45.0",
+    "monaco-editor-esm-webpack-plugin": "^2.1.0",
     "sql-formatter": "^15.2.0"
   },
   "devDependencies": {

@@ -8,8 +8,9 @@ export default defineConfig({
   request: {},
   npmClient: 'pnpm',
   esbuildMinifyIIFE: true,
-  publicPath: '/XM-MONACO-EDITOR-DEMO/dist/',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/XM-MONACO-EDITOR-DEMO/dist/',
   hash: true,
-  history: {type: 'hash',}
+  history: {type: 'hash',},
+  headScripts: ['/monaco-editor/vs/loader.js'],
 });
 

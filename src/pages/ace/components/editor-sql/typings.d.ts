@@ -1,0 +1,1 @@
+declare module 'ace/mode/text_highlight_rules';

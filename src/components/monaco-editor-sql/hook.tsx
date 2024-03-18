@@ -137,7 +137,24 @@ export default (props: MONACO_EDITOR_SQL) => {
     // ])
     monaco.languages.registerHoverProvider('sql', {
       provideHover(model: monaco.editor.ITextModel, position: monaco.Position) {
-        console.log(position);
+        // 根据 position 获取当前的 word 或 token
+        const word = model.getWordAtPosition(position);
+        if (word) {
+            // 创建自定义的 DOM 内容
+            const domNode = document.createElement('div');
+            domNode.innerHTML = '<strong>Custom HTML Content</strong><br/>This is a custom tooltip for token: ' + word.word;
+            domNode.style.background = 'white';
+            domNode.style.padding = '80px';
+            domNode.style.border = '1px solid black';
+
+            console.log(domNode.outerHTML);
+            // 返回 hover 对象
+            return {
+                range: new monaco.Range(position.lineNumber, word.startColumn, position.lineNumber, word.endColumn),
+                // contents: [{ value: 'Simple **Markdown** content' }],
+                content: [{ isTrusted: true, value: domNode.outerHTML, supportHtml: true }]
+            };
+        }
         return null;
       }
     })

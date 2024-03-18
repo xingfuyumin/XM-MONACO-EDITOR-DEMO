@@ -16,7 +16,7 @@ function setLocale(locale: MONACO_EDITOR_LOCALE) {
     monacoRequire.locale = locale;
     monacoRequire.config({
       paths: {
-        vs: '/monaco-editor/vs'
+        vs: `${process.env.NODE_ENV === 'development' ? '/' : '/XM-MONACO-EDITOR-DEMO/dist/'}monaco-editor/vs`
       },
       "vs/nls": {
         availableLanguages: {
@@ -40,7 +40,7 @@ export default (props: MONACO_EDITOR, ref?: Ref<MONACO_EDITOR_REF>) => {
     setLocale( Locale_map[props.locale || 'zh-CN'] as MONACO_EDITOR_LOCALE);
     cacheRef.current.monaco = await new Promise((resolve, reject) => {
       monacoRequire(
-        [`${process.env.NODE_ENV === 'development' ? '/' : '/XM-MONACO-EDITOR-DEMO/dist/'}vs/editor/editor.main`],
+        ['vs/editor/editor.main'],
         function (monaco: any) {
           resolve(monaco);
         },

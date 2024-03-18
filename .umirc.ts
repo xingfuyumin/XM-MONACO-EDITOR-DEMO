@@ -11,6 +11,6 @@ export default defineConfig({
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/XM-MONACO-EDITOR-DEMO/dist/',
   hash: true,
   history: {type: 'hash',},
-  headScripts: ['/monaco-editor/vs/loader.js'],
+  headScripts: [`${process.env.NODE_ENV === 'development' ? '/' : '/XM-MONACO-EDITOR-DEMO/dist/'}monaco-editor/vs/loader.js`],
 });
 

@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  .editor {
+    flex-grow: 1;
+  }
+  .container {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .tool {
+    width: 400px;
+    height: 100%;
+    border-left: 1px solid #ccc;
+    padding: 12px;
+  }
+  .info {
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+  .info2 {
+    margin-top: 20px;
+    padding: 4px;
+  }
+}

@@ -4,6 +4,7 @@ import { TERMINAL_SH_API } from './props';
 import 'xterm/css/xterm.css'
 import { TERMINAL_REF } from '../terminal-rc/props';
 import { IDisposable } from 'xterm';
+import { useUpdateEffect } from 'ahooks';
 
 
 export default (props: TERMINAL_SH_API, ref?: Ref<TERMINAL_REF>) => {
@@ -11,14 +12,16 @@ export default (props: TERMINAL_SH_API, ref?: Ref<TERMINAL_REF>) => {
   const inputRef = useRef('');
   const dataListenerRef = useRef<IDisposable>();
 
-  const handleInit = async () => {
+  const handleInit = async (init?: boolean) => {
     const inputPrefix = props.inputPrefix || '';
     const { terminal } = cacheRef.current;
     if (!terminal) {
       return;
     }
     inputRef.current = '';
-    terminal.writeln('');
+    if (!init) {
+      terminal.writeln('');
+    }
     if (!props.readonly) {
       terminal.write(inputPrefix);
     }
@@ -70,6 +73,9 @@ export default (props: TERMINAL_SH_API, ref?: Ref<TERMINAL_REF>) => {
     });
   }
   useEffect(() => {
+    handleInit(true);
+  }, []);
+  useUpdateEffect(() => {
     handleInit();
   }, [props.inputPrefix, props.readonly]);
   useImperativeHandle(ref, () => {
